@@ -6,5 +6,5 @@
    GITHUB_PAGE_URL=https://tingsyuanwang.github.io/FakeSchemaGenerator
    ```
 3. `make run` to generate fsg executable file.
-4. `make generate n=11000` - generate 11,000 files.
-5. `make post n=11000` - post 11,000 to the server.
+4. `make generate n=10010` - generate 10,010 files.
+5. `make post n=10010` - post 10,010 to the server.
