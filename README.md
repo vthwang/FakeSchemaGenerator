@@ -8,4 +8,4 @@
 3. `make run` to generate fsg executable file.
 4. `make generate n=10010` - generate 10,010 files.
 5. Update data to Github.
-6. `make post n=10010` - post 10,010 to the server.
+6. `make post f=1 t=10010` - post 10,010 to the server.

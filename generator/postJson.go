@@ -23,13 +23,13 @@ func viperEnvVariable(key string) string {
 	return value
 }
 
-func postJson(jsonNumbers int) {
-	log.Printf("Start to post %d json files\n", jsonNumbers)
+func postJson(postFromNumber int, postToNumber int) {
+	log.Printf("Start to post %d json files\n", postToNumber-postFromNumber+1)
 
 	indexUrl := viperEnvVariable("INDEX_URL")
 	githubPageUrl := viperEnvVariable("GITHUB_PAGE_URL")
 
-	for i := 1; i <= jsonNumbers; i++ {
+	for i := postFromNumber; i <= postToNumber; i++ {
 		fileName := fmt.Sprintf("json/%d.json", i)
 
 		body, _ := json.Marshal(map[string]string{
@@ -54,5 +54,5 @@ func postJson(jsonNumbers int) {
 		}
 	}
 
-	log.Printf("Congratulations! 🎉 Successfully post %d json files\n", jsonNumbers)
+	log.Printf("Congratulations! 🎉 Successfully post %d json files\n", postToNumber-postFromNumber+1)
 }
