@@ -49,6 +49,8 @@ func postJson(jsonNumbers int) {
 			bodyString := string(body)
 			log.Printf("%v response: %v\n", fileName, bodyString)
 			log.Printf("%v/%v is posted. ✅ \n", githubPageUrl, fileName)
+		} else {
+			log.Fatalf("Post file %s failed: %v. ❌", fileName, err)
 		}
 	}
 
