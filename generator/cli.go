@@ -39,18 +39,19 @@ func (c *CLI) Run() {
 	c.checkArgs()
 
 	generateCmd := flag.NewFlagSet("generate", flag.ExitOnError)
-	//postCmd := flag.NewFlagSet("post", flag.ExitOnError)
+	postCmd := flag.NewFlagSet("post", flag.ExitOnError)
 	generateNumber := generateCmd.Int("n", 0, "Type in Generate number:")
-	// postumber := postCmd.Int("number", 0, "Type in Post Number:")
+	postNumber := postCmd.Int("n", 0, "Type in Post Number:")
 
 	switch os.Args[1] {
 	case "generate":
 		err := generateCmd.Parse(os.Args[2:])
 		check(err)
 		buildJson(*generateNumber)
-	//case "post":
-	//	err := postCmd.Parse(os.Args[2:])
-	//	check(err)
+	case "post":
+		err := postCmd.Parse(os.Args[2:])
+		check(err)
+		postJson(*postNumber)
 	default:
 		c.printUsage()
 		os.Exit(1)

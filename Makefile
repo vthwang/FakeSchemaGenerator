@@ -6,3 +6,6 @@ run:
 
 generate:
 	@./fsg generate -n $(n)
+
+post:
+	@./fsg post -n $(n)
